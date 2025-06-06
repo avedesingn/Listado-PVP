@@ -3,102 +3,94 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Listado de Precios - Tarjetas</title>
+  <title>Listado de Precios – Tarjetas</title>
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, sans-serif;
       background-color: #f8f8f8;
-      margin: 0;
       padding: 20px;
       color: #333;
     }
-
-    h1 {
-      font-size: 26px;
-      margin-bottom: 30px;
-      color: #d35400;
-      text-align: center;
-    }
-
     .contenido {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
     }
-
-    .producto {
-      margin-bottom: 40px;
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: #d35400;
+      margin-bottom: 30px;
     }
-
-    .producto h2 {
+    h2 {
       font-size: 20px;
       color: #e67e22;
+      margin-top: 30px;
       margin-bottom: 5px;
       border-left: 6px solid #e67e22;
       padding-left: 10px;
     }
-
     .descripcion {
-      font-size: 13px;
+      font-size: 14px;
       color: #888;
-      font-weight: 300;
       margin: 0 0 10px 16px;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
       background-color: #fff;
       border: 1px solid #ddd;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-
     th, td {
       padding: 10px;
-      text-align: center;
       border: 1px solid #ddd;
+      text-align: center;
     }
-
     th {
       background-color: #fef2e6;
       color: #d35400;
-      font-weight: 600;
     }
-
-    tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
     .precio {
       font-weight: bold;
     }
-
-    footer {
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #ddd;
+    .volver {
       text-align: center;
+      margin: 30px 0;
     }
-
+    .volver a {
+      padding: 8px 16px;
+      background-color: #e67e22;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      color: #666;
+    }
     .empresa-nombre {
       font-size: 20px;
       font-weight: bold;
       color: #e67e22;
       margin-bottom: 6px;
     }
-
     .empresa-descripcion {
       font-size: 15px;
       color: #e67e22;
       font-weight: 300;
       margin-bottom: 8px;
     }
-
     .empresa-contacto {
       font-size: 15px;
       color: #444;
     }
-
     .empresa-contacto strong {
       color: #e67e22;
       font-weight: bold;
@@ -106,82 +98,63 @@
   </style>
 </head>
 <body>
-  <h1>Listado de precios – Tarjetas</h1>
   <div class="contenido">
-    <div class="producto">
-      <h2>TARJETAS 1 CARA A COLOR</h2>
-      <p class="descripcion">Cartulina Silk 350 g</p>
-      <table>
-        <thead>
-          <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>100</td><td class="precio">19,95€</td><td>24,14€</td></tr>
-          <tr><td>150</td><td class="precio">20,95€</td><td>25,35€</td></tr>
-          <tr><td>200</td><td class="precio">29,95€</td><td>36,24€</td></tr>
-          <tr><td>300</td><td class="precio">39,95€</td><td>48,34€</td></tr>
-          <tr><td>500</td><td class="precio">49,95€</td><td>60,44€</td></tr>
-          <tr><td>1000</td><td class="precio">69,95€</td><td>84,64€</td></tr>
-        </tbody>
-      </table>
+    <h1>Listado de precios – Tarjetas</h1>
+
+    <h2>TARJETAS 1 CARA A COLOR</h2>
+    <p class="descripcion">Cartulina Silk 350 g</p>
+    <table>
+      <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
+      <tr><td>100</td><td class="precio">19,95€</td><td>24,14€</td></tr>
+      <tr><td>150</td><td class="precio">20,95€</td><td>25,35€</td></tr>
+      <tr><td>200</td><td class="precio">29,95€</td><td>36,24€</td></tr>
+      <tr><td>300</td><td class="precio">39,95€</td><td>48,34€</td></tr>
+      <tr><td>500</td><td class="precio">49,95€</td><td>60,44€</td></tr>
+      <tr><td>1000</td><td class="precio">69,95€</td><td>84,64€</td></tr>
+    </table>
+
+    <h2>TARJETAS 2 CARAS A COLOR</h2>
+    <p class="descripcion">Cartulina Silk 350 g</p>
+    <table>
+      <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
+      <tr><td>100</td><td class="precio">29,95€</td><td>36,24€</td></tr>
+      <tr><td>150</td><td class="precio">29,95€</td><td>36,24€</td></tr>
+      <tr><td>200</td><td class="precio">42,95€</td><td>51,97€</td></tr>
+      <tr><td>300</td><td class="precio">49,95€</td><td>60,44€</td></tr>
+      <tr><td>500</td><td class="precio">59,95€</td><td>72,54€</td></tr>
+      <tr><td>1000</td><td class="precio">79,95€</td><td>96,74€</td></tr>
+    </table>
+
+    <h2>TARJETAS UNA CARA COLOR / OTRA NEGRO</h2>
+    <p class="descripcion">Cartulina Silk 350 g</p>
+    <table>
+      <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
+      <tr><td>100</td><td class="precio">24,95€</td><td>30,19€</td></tr>
+      <tr><td>150</td><td class="precio">25,95€</td><td>31,40€</td></tr>
+      <tr><td>200</td><td class="precio">39,95€</td><td>48,34€</td></tr>
+      <tr><td>300</td><td class="precio">48,95€</td><td>59,23€</td></tr>
+      <tr><td>500</td><td class="precio">56,95€</td><td>68,91€</td></tr>
+      <tr><td>1000</td><td class="precio">62,95€</td><td>76,17€</td></tr>
+    </table>
+
+    <h2>TARJETAS TODO COLOR CARTULINA EXP</h2>
+    <table>
+      <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
+      <tr><td>150</td><td class="precio">32,95€</td><td>39,87€</td></tr>
+      <tr><td>200</td><td class="precio">39,95€</td><td>48,34€</td></tr>
+      <tr><td>500</td><td class="precio">74,95€</td><td>90,69€</td></tr>
+      <tr><td>1000</td><td class="precio">119,95€</td><td>145,14€</td></tr>
+    </table>
+
+    <div class="volver">
+      <a href="index.html">← Volver</a>
     </div>
 
-    <div class="producto">
-      <h2>TARJETAS 2 CARAS A COLOR</h2>
-      <p class="descripcion">Cartulina Silk 350 g</p>
-      <table>
-        <thead>
-          <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>100</td><td class="precio">29,95€</td><td>36,24€</td></tr>
-          <tr><td>150</td><td class="precio">29,95€</td><td>36,24€</td></tr>
-          <tr><td>200</td><td class="precio">42,95€</td><td>51,97€</td></tr>
-          <tr><td>300</td><td class="precio">49,95€</td><td>60,44€</td></tr>
-          <tr><td>500</td><td class="precio">59,95€</td><td>72,54€</td></tr>
-          <tr><td>1000</td><td class="precio">79,95€</td><td>96,74€</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="producto">
-      <h2>TARJETAS UNA CARA COLOR / OTRA NEGRO</h2>
-      <p class="descripcion">Cartulina Silk 350 g</p>
-      <table>
-        <thead>
-          <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>100</td><td class="precio">24,95€</td><td>30,19€</td></tr>
-          <tr><td>150</td><td class="precio">25,95€</td><td>31,40€</td></tr>
-          <tr><td>200</td><td class="precio">39,95€</td><td>48,34€</td></tr>
-          <tr><td>300</td><td class="precio">48,95€</td><td>59,23€</td></tr>
-          <tr><td>500</td><td class="precio">56,95€</td><td>68,91€</td></tr>
-          <tr><td>1000</td><td class="precio">62,95€</td><td>76,17€</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="producto">
-      <h2>TARJETAS TODO COLOR CARTULINA EXP</h2>
-      <table>
-        <thead>
-          <tr><th>Cantidad</th><th>Precio sin IVA</th><th>Precio con IVA</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>150</td><td class="precio">32,95€</td><td>39,87€</td></tr>
-          <tr><td>200</td><td class="precio">39,95€</td><td>48,34€</td></tr>
-          <tr><td>500</td><td class="precio">74,95€</td><td>90,69€</td></tr>
-          <tr><td>1000</td><td class="precio">119,95€</td><td>145,14€</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <footer>
+      <div class="empresa-nombre">Orixe Publicidade</div>
+      <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
+      <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
+    </footer>
   </div>
-
-  <footer>
-    <div class="empresa-nombre">Orixe Publicidade</div>
-    <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
-    <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
-  </footer>
 </body>
 </html>

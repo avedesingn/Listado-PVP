@@ -4,51 +4,118 @@
 <head>
   <meta charset="UTF-8">
   <title>Listado de Precios - Orixe Publicidade</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background-color: #f8f8f8;
-      margin: 0;
-      padding: 40px;
-      color: #333;
-      text-align: center;
-    }
+  
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+  .contenido {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #d35400;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 20px;
+    color: #e67e22;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-left: 6px solid #e67e22;
+    padding-left: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  th {
+    background-color: #fef2e6;
+    color: #d35400;
+  }
+  .precio {
+    font-weight: bold;
+  }
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+  }
+  .empresa-nombre {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 6px;
+  }
+  .empresa-descripcion {
+    font-size: 15px;
+    color: #e67e22;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .empresa-contacto {
+    font-size: 15px;
+    color: #444;
+  }
+  .empresa-contacto strong {
+    color: #e67e22;
+    font-weight: bold;
+  }
+  .enlaces {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .enlaces a {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #e67e22;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+  }
+  .enlaces a:hover {
+    background-color: #cf6117;
+  }
+</style>
 
-    h1 {
-      font-size: 28px;
-      color: #d35400;
-      margin-bottom: 40px;
-    }
-
-    .enlaces {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    a {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #e67e22;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
-      transition: background 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #cf6117;
-    }
-  </style>
 </head>
 <body>
   <h1>Listados de Precios – Orixe Publicidade</h1>
   <div class="enlaces">
     <a href="listado_tarjetas.html">Tarjetas</a>
     <a href="listado_impresiones.html">Impresiones bajo demanda</a>
+    <a href="listado_sellos.html">Sellos</a>
   </div>
+  
+<footer>
+  <div class="empresa-nombre">Orixe Publicidade</div>
+  <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
+  <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
+</footer>
+
 </body>
 </html>
