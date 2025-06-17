@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Camisetas marcadas</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f8f8f8;
+      padding: 20px;
+      color: #333;
+    }
+    .contenido {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: #d35400;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 20px;
+      color: #e67e22;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      border-left: 6px solid #e67e22;
+      padding-left: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #fef2e6;
+      color: #d35400;
+    }
+    .nota {
+      margin-top: -10px;
+      font-style: italic;
+      color: #555;
+    }
+    .botones-camisetas {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .botones-camisetas a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #e67e22;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .botones-camisetas a:hover {
+      background-color: #d35400;
+    }
+    .volver {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .volver a {
+      padding: 8px 16px;
+      background-color: #e67e22;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .grafico {
+      text-align: center;
+      margin: 30px 0 20px 0;
+    }
+    .grafico img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      color: #666;
+    }
+    .empresa-nombre {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e67e22;
+      margin-bottom: 6px;
+    }
+    .empresa-descripcion {
+      font-size: 15px;
+      color: #e67e22;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    .empresa-contacto {
+      font-size: 15px;
+      color: #444;
+    }
+    .empresa-contacto strong {
+      color: #e67e22;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenido">
+    <h1>Camisetas marcadas</h1>
+
+    <h2>Delante tamaño escudo + detrás en grande</h2>
+    <table>
+      <tr><th>Cantidad</th><th>Precio</th></tr>
+      <tr><td>10 camisetas</td><td>99 €</td></tr>
+    </table>
+    <p class="nota">Los precios mostrados no incluyen el IVA.</p>
+
+    <div class="grafico">
+      <img src="CAMISETA.png" alt="Ubicación de marcaje en camiseta">
+    </div>
+
+    <div class="botones-camisetas">
+      <a href="https://www.roly.es/model_CA6502" target="_blank">Ver camiseta Dogo Premium</a>
+      <a href="https://www.valento.es/productos/camisetas-unisex/camiseta-RACING" target="_blank">Ver camiseta Valento Racing</a>
+    </div>
+
+    <div class="volver">
+      <a href="index.html">← Volver</a>
+    </div>
+
+    <footer>
+      <div class="empresa-nombre">Orixe Publicidade</div>
+      <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
+      <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
+    </footer>
+  </div>
+</body>
+</html>
