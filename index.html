@@ -12,43 +12,54 @@
     padding: 20px;
     color: #333;
   }
-  .contenido {
-    max-width: 700px;
+  .contenido-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
+  }
+  .gif-lateral {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+  }
+  .gif-lateral img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  .enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    justify-content: center;
+  }
+  .enlaces a {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #e67e22;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+  }
+  .enlaces a:hover {
+    background-color: #cf6117;
   }
   h1 {
     text-align: center;
     font-size: 26px;
     color: #d35400;
     margin-bottom: 30px;
-  }
-  h2 {
-    font-size: 20px;
-    color: #e67e22;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-left: 6px solid #e67e22;
-    padding-left: 10px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  th {
-    background-color: #fef2e6;
-    color: #d35400;
-  }
-  .precio {
-    font-weight: bold;
   }
   footer {
     text-align: center;
@@ -78,45 +89,32 @@
     color: #e67e22;
     font-weight: bold;
   }
-  .enlaces {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  .enlaces a {
-    display: inline-block;
-    padding: 15px 25px;
-    background-color: #e67e22;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: background 0.3s ease;
-  }
-  .enlaces a:hover {
-    background-color: #cf6117;
-  }
 </style>
 
 </head>
 <body>
   <h1>Listados de Precios – Orixe Publicidade</h1>
-  <div class="enlaces">
-    <a href="listado_rollup.html">Roll Up y Lona</a>
-    <a href="listado_tarjetas.html">Tarjetas</a>
-    <a href="listado_impresiones.html">Impresiones bajo demanda</a>
-    <a href="listado_sellos.html">Sellos</a>
-    <a href="listado_camisetas.html">Camisetas</a>
+
+  <div class="contenido-principal">
+    <div class="gif-lateral">
+      <img src="CAMISETAS.gif" alt="Camisetas en mesa">
+    </div>
+    <div class="enlaces">
+      <a href="listado_rollup.html">Roll Up y Lona</a>
+      <a href="listado_tarjetas.html">Tarjetas</a>
+      <a href="listado_impresiones.html">Impresiones bajo demanda</a>
+      <a href="listado_sellos.html">Sellos</a>
+      <a href="listado_camisetas.html">Camisetas</a>
+    </div>
+    <div class="gif-lateral">
+      <img src="20250617_1348_Printing Vibrant Flyers_simple_compose_01jxyvfvs6fxrbbm0np38x5bpz.gif" alt="Impresora con flyer naranja animado">
+    </div>
   </div>
 
-<footer>
-  <div class="empresa-nombre">Orixe Publicidade</div>
-  <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
-  <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
-</footer>
-
+  <footer>
+    <div class="empresa-nombre">Orixe Publicidade</div>
+    <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
+    <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
+  </footer>
 </body>
 </html>
