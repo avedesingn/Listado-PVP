@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de pegatinas</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f8f8f8;
+      padding: 20px;
+      color: #333;
+      margin: 0;
+    }
+    .contenido {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px 24px 30px 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: #d35400;
+      margin-bottom: 20px;
+    }
+    .intro {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .form-grid label {
+      font-size: 14px;
+      color: #444;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .form-grid input {
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .fila-completa {
+      grid-column: 1 / 3;
+    }
+    .boton-calcular {
+      display: inline-block;
+      padding: 8px 18px;
+      background-color: #e67e22;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    .boton-calcular:hover {
+      background-color: #cf6117;
+    }
+
+    /* RESULTADO PRINCIPAL (número grande) */
+    .resultado-principal {
+      text-align: center;
+      font-size: 52px;
+      font-weight: bold;
+      color: #e67e22;
+      margin-top: -5px;
+      margin-bottom: 15px;
+    }
+    .resultado-principal small {
+      display: block;
+      font-size: 16px;
+      color: #d35400;
+      margin-top: -10px;
+    }
+
+    .resultados {
+      margin-top: 22px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      background-color: #fff8f2;
+      border-left: 4px solid #e67e22;
+      font-size: 14px;
+      color: #444;
+    }
+    .resultados h2 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: #d35400;
+    }
+    .resultados p {
+      margin: 4px 0;
+    }
+    .nota {
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+    }
+    .subtitulo {
+      font-size: 18px;
+      color: #d35400;
+      margin-top: 30px;
+      margin-bottom: 8px;
+    }
+    .subintro {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 14px;
+    }
+    .volver {
+      text-align: center;
+      margin: 30px 0 0 0;
+    }
+    .volver a {
+      padding: 8px 16px;
+      background-color: #e67e22;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .volver a:hover {
+      background-color: #cf6117;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+      color: #666;
+    }
+    .empresa-nombre {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e67e22;
+      margin-bottom: 4px;
+    }
+    .empresa-descripcion {
+      font-size: 14px;
+      color: #e67e22;
+      font-weight: 300;
+      margin-bottom: 6px;
+    }
+    .empresa-contacto {
+      font-size: 14px;
+      color: #444;
+    }
+    .empresa-contacto strong {
+      color: #e67e22;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenido">
+    <h1>Calculadora de pegatinas</h1>
+    <p class="intro">
+      Introduce las medidas en centímetros. Primero puedes calcular cuántas pegatinas entran por metro cuadrado
+      y después, con las mismas medidas, cuánto ocupa una tirada concreta en una bobina de vinilo.
+    </p>
+
+    <!-- ================== SECCIÓN 1: PEGATINAS POR m² ================== -->
+    <h2 class="subtitulo">1. Pegatinas por metro cuadrado</h2>
+    <p class="subintro">
+      Medidas de la pegatina y separación entre unidades. Se usan también en el cálculo de bobina de la sección 2.
+    </p>
+
+    <div class="form-grid">
+      <div>
+        <label for="lado1">Lado 1 de la pegatina (cm)</label>
+        <input type="number" id="lado1" step="0.01" min="0">
+      </div>
+      <div>
+        <label for="lado2">Lado 2 de la pegatina (cm)</label>
+        <input type="number" id="lado2" step="0.01" min="0">
+      </div>
+      <div>
+        <label for="separacion">Separación entre pegatinas (cm)</label>
+        <input type="number" id="separacion" step="0.01" min="0">
+      </div>
+      <div>
+        <label for="metros2">Metros cuadrados de vinilo</label>
+        <input type="number" id="metros2" step="0.01" min="0">
+      </div>
+      <div class="fila-completa">
+        <button class="boton-calcular" onclick="calcularPegatinas()">Calcular por m²</button>
+      </div>
+    </div>
+
+    <div id="resultados" class="resultados" style="display:none;">
+      <div id="resultadoPrincipal" class="resultado-principal"></div>
+
+      <h2>Resultado</h2>
+      <p id="res-orientacion"></p>
+      <p id="res-modulo"></p>
+      <p id="res-filas-columnas"></p>
+      <p id="res-por-m2"></p>
+      <p id="res-total"></p>
+
+      <p class="nota">
+        Cálculo aproximado suponiendo distribución en rejilla, sin rotar individualmente dentro del mismo m²
+        más allá de las dos orientaciones generales probadas.
+      </p>
+    </div>
+
+    <!-- ================== SECCIÓN 2: CÁLCULO EN BOBINA ================== -->
+    <h2 class="subtitulo">2. Metros lineales en bobina</h2>
+    <p class="subintro">
+      Usa las mismas medidas de pegatina y separación de la sección 1. Indica cuántas pegatinas necesitas y el ancho de la bobina.
+    </p>
+
+    <div class="form-grid">
+      <div>
+        <label for="cantidad">Cantidad de pegatinas</label>
+        <input type="number" id="cantidad" min="1" step="1">
+      </div>
+      <div>
+        <label for="anchoBobina">Ancho de la bobina (cm)</label>
+        <input type="number" id="anchoBobina" min="1" step="0.01">
+      </div>
+      <div class="fila-completa">
+        <button class="boton-calcular" onclick="calcularEnBobina()">Calcular en bobina</button>
+      </div>
+    </div>
+
+    <div id="resultadosBobina" class="resultados" style="display:none;">
+      <div id="resultadoPrincipalBobina" class="resultado-principal"></div>
+
+      <h2>Resultado en bobina</h2>
+      <p id="res-orientacion-bobina"></p>
+      <p id="res-modulo-bobina"></p>
+      <p id="res-filas-columnas-bobina"></p>
+      <p id="res-longitud"></p>
+      <p id="res-superficie"></p>
+
+      <p class="nota">
+        Se calcula la orientación que permite imprimir todas las pegatinas con menor longitud de bobina.
+        Distribución en rejilla, sin aprovechar rotaciones más complejas.
+      </p>
+    </div>
+
+    <div class="volver">
+      <a href="index.html">← Volver</a>
+    </div>
+
+    <footer>
+      <div class="empresa-nombre">Orixe Publicidade</div>
+      <div class="empresa-descripcion">Imprenta / Diseño / Rotulación</div>
+      <div class="empresa-contacto"><strong>T.</strong> 988 60 70 75 <strong>/</strong> 672 43 58 90</div>
+    </footer>
+  </div>
+
+  <script>
+    function calcularOrientacion(ancho, alto, sep, anchoDisponible) {
+      const moduloAncho = ancho + sep;
+      const moduloAlto  = alto + sep;
+
+      if (moduloAncho <= 0 || moduloAlto <= 0) {
+        return { valido: false };
+      }
+
+      // Si anchoDisponible es null, trabajamos sobre 1 m (100 cm)
+      const baseAncho = anchoDisponible ? anchoDisponible : 100;
+
+      const columnas = Math.floor(baseAncho / moduloAncho);
+      const filas    = Math.floor(100 / moduloAlto);
+
+      const unidades = columnas * filas;
+
+      return {
+        valido: columnas > 0 && filas > 0,
+        unidades,
+        columnas,
+        filas,
+        moduloAncho,
+        moduloAlto,
+        baseAncho
+      };
+    }
+
+    function calcularPegatinas() {
+      const lado1 = parseFloat(document.getElementById('lado1').value);
+      const lado2 = parseFloat(document.getElementById('lado2').value);
+      const separacion = parseFloat(document.getElementById('separacion').value);
+      const metros2 = parseFloat(document.getElementById('metros2').value);
+
+      if (isNaN(lado1) || isNaN(lado2) || isNaN(separacion) || isNaN(metros2) ||
+          lado1 <= 0 || lado2 <= 0 || separacion < 0 || metros2 <= 0) {
+        alert('Revisa los datos de la sección 1: todos deben ser mayores que 0 (la separación puede ser 0).');
+        return;
+      }
+
+      const oriA = calcularOrientacion(lado1, lado2, separacion, null);
+      const oriB = calcularOrientacion(lado2, lado1, separacion, null);
+
+      let mejor = oriA;
+      let textoOrientacion = 'Orientación usada: Lado 1 en horizontal, Lado 2 en vertical.';
+
+      if (oriB.valido && (!oriA.valido || oriB.unidades > oriA.unidades)) {
+        mejor = oriB;
+        textoOrientacion = 'Orientación usada: Lado 2 en horizontal, Lado 1 en vertical (rotadas 90º).';
+      }
+
+      if (!mejor.valido) {
+        alert('No es posible colocar las pegatinas en 1 m² con estos datos.');
+        return;
+      }
+
+      const pegatinasPorM2 = mejor.unidades;
+      const totalPegatinas = pegatinasPorM2 * metros2;
+
+      document.getElementById('resultadoPrincipal').innerHTML =
+        totalPegatinas + '<small>pegatinas en total</small>';
+
+      document.getElementById('res-orientacion').textContent = textoOrientacion;
+      document.getElementById('res-modulo').textContent =
+        'Módulo ocupado por pegatina + separación: ' +
+        mejor.moduloAncho.toFixed(2) + ' cm (ancho) × ' +
+        mejor.moduloAlto.toFixed(2) + ' cm (alto).';
+      document.getElementById('res-filas-columnas').textContent =
+        'En 1 m² (100×100 cm) caben ' + mejor.columnas +
+        ' columnas y ' + mejor.filas + ' filas en esta orientación.';
+      document.getElementById('res-por-m2').textContent =
+        'Pegatinas por metro cuadrado: ' + pegatinasPorM2 + ' uds/m².';
+      document.getElementById('res-total').textContent =
+        'Para ' + metros2 + ' m² de vinilo caben aproximadamente: ' +
+        totalPegatinas + ' pegatinas.';
+
+      document.getElementById('resultados').style.display = 'block';
+    }
+
+    function calcularEnBobina() {
+      const lado1 = parseFloat(document.getElementById('lado1').value);
+      const lado2 = parseFloat(document.getElementById('lado2').value);
+      const separacion = parseFloat(document.getElementById('separacion').value);
+      const cantidad = parseInt(document.getElementById('cantidad').value, 10);
+      const anchoBobina = parseFloat(document.getElementById('anchoBobina').value);
+
+      if (isNaN(lado1) || isNaN(lado2) || isNaN(separacion) ||
+          lado1 <= 0 || lado2 <= 0 || separacion < 0) {
+        alert('Revisa primero las medidas de pegatina y separación en la sección 1.');
+        return;
+      }
+
+      if (isNaN(cantidad) || cantidad <= 0 || isNaN(anchoBobina) || anchoBobina <= 0) {
+        alert('Revisa los datos de la sección 2: cantidad y ancho de bobina deben ser mayores que 0.');
+        return;
+      }
+
+      // Orientación A: lado1 va a lo ancho de la bobina
+      const moduloAnchoA = lado1 + separacion;
+      const moduloAltoA  = lado2 + separacion;
+      const columnasA = Math.floor(anchoBobina / moduloAnchoA);
+      const filasNecesariasA = columnasA > 0 ? Math.ceil(cantidad / columnasA) : 0;
+      const longitudCmA = filasNecesariasA * moduloAltoA;
+
+      // Orientación B: lado2 va a lo ancho de la bobina (rotadas 90º)
+      const moduloAnchoB = lado2 + separacion;
+      const moduloAltoB  = lado1 + separacion;
+      const columnasB = Math.floor(anchoBobina / moduloAnchoB);
+      const filasNecesariasB = columnasB > 0 ? Math.ceil(cantidad / columnasB) : 0;
+      const longitudCmB = filasNecesariasB * moduloAltoB;
+
+      // Elegimos la orientación válida que consuma menos longitud
+      let orientacion;
+      if (columnasA === 0 && columnasB === 0) {
+        alert('Con este ancho de bobina no cabe ni una pegatina en horizontal. Aumenta el ancho o reduce el tamaño.');
+        return;
+      } else if (columnasA === 0) {
+        orientacion = 'B';
+      } else if (columnasB === 0) {
+        orientacion = 'A';
+      } else {
+        orientacion = longitudCmA <= longitudCmB ? 'A' : 'B';
+      }
+
+      let columnas, filasNecesarias, moduloAncho, moduloAlto, longitudCm, textoOrientacion;
+      if (orientacion === 'A') {
+        columnas = columnasA;
+        filasNecesarias = filasNecesariasA;
+        moduloAncho = moduloAnchoA;
+        moduloAlto = moduloAltoA;
+        longitudCm = longitudCmA;
+        textoOrientacion = 'Orientación usada: Lado 1 en horizontal (ancho de bobina), Lado 2 en vertical.';
+      } else {
+        columnas = columnasB;
+        filasNecesarias = filasNecesariasB;
+        moduloAncho = moduloAnchoB;
+        moduloAlto = moduloAltoB;
+        longitudCm = longitudCmB;
+        textoOrientacion = 'Orientación usada: Lado 2 en horizontal (ancho de bobina), Lado 1 en vertical (rotadas 90º).';
+      }
+
+      const longitudMetros = longitudCm / 100;
+      const superficieM2 = (anchoBobina * longitudCm) / 10000; // cm * cm / (100*100)
+
+      document.getElementById('resultadoPrincipalBobina').innerHTML =
+        longitudMetros.toFixed(2) + ' m<br><small>longitud de bobina necesaria</small>';
+
+      document.getElementById('res-orientacion-bobina').textContent = textoOrientacion;
+      document.getElementById('res-modulo-bobina').textContent =
+        'Módulo ocupado por pegatina + separación: ' +
+        moduloAncho.toFixed(2) + ' cm (ancho) × ' +
+        moduloAlto.toFixed(2) + ' cm (alto).';
+      document.getElementById('res-filas-columnas-bobina').textContent =
+        'Se colocan ' + columnas + ' columnas a lo ancho y ' +
+        filasNecesarias + ' filas a lo largo para un total de ' +
+        cantidad + ' pegatinas.';
+      document.getElementById('res-longitud').textContent =
+        'Longitud de bobina necesaria: ' + longitudMetros.toFixed(2) + ' m.';
+      document.getElementById('res-superficie').textContent =
+        'Superficie ocupada: ' + superficieM2.toFixed(2) + ' m² (ancho ' +
+        anchoBobina + ' cm × longitud ' + longitudMetros.toFixed(2) + ' m).';
+
+      document.getElementById('resultadosBobina').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
